@@ -42,7 +42,7 @@ public class testCard extends TestCase {
   public void testisSetQuantity(){
     Card c = new Card(1,2,3,1);
     Card c2 = new Card(1,2,2,1);
-    Card c3 = new Card(1,2,1,3);
+    Card c3 = new Card(1,2,1,1);
     
     assertEquals(true, c.isSet(c2,c3));
   }
@@ -55,14 +55,14 @@ public class testCard extends TestCase {
   }
   public void testisSetShading(){
     Card c = new Card(1,3,3,2);
-    Card c2 = new Card(2,3,3,1);
+    Card c2 = new Card(2,1,3,1);
     Card c3 = new Card(3,2,3,3);
     
     assertEquals(true, c.isSet(c2,c3));
   }
   public void testisSetShape(){
     Card c = new Card(1,3,3,2);
-    Card c2 = new Card(2,3,2,2);
+    Card c2 = new Card(2,2,2,2);
     Card c3 = new Card(3,1,1,2);
     
     assertEquals(true, c.isSet(c2,c3));

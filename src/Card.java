@@ -72,9 +72,9 @@ public class Card {
   }
     
     public boolean isSet(Card c1, Card c2){
-      if((c1.getQuantity() + c2.getQuantity() + quantity) % 3 == 0 ||
-         (c1.getColor() + c2.getColor() + color ) % 3 == 0 ||
-         (c1.getShading() + c2.getShading() + shading) % 3 == 0 ||
+      if((c1.getQuantity() + c2.getQuantity() + quantity) % 3 == 0 &&
+         (c1.getColor() + c2.getColor() + color ) % 3 == 0 &&
+         (c1.getShading() + c2.getShading() + shading) % 3 == 0 &&
          (c1.getShape() + c2.getShape() + shape) % 3 == 0){
         return true;
       }
