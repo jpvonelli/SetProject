@@ -17,7 +17,7 @@ public class Table {
     TableNode curr = head;
     
     while(curr != null){
-      if(equals(c)){
+      if(c.equals(curr.getCard())){
         return true;
       }
       else{
@@ -30,7 +30,7 @@ public class Table {
     TableNode curr = head;
     TableNode prev = null;
     while(curr != null){
-      if(!curr.equals(c))
+      if(!c.equals(curr.getCard()))
         curr.getNext();
       else{
         if(curr == head)
