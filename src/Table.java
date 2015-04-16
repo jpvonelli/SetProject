@@ -21,7 +21,7 @@ public class Table {
         return true;
       }
       else{
-        curr.getNext();
+        curr = curr.getNext();
       }
     }
     return false;
