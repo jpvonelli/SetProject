@@ -57,6 +57,22 @@ public class testTable extends TestCase {
     t.add(c3);
     t.removeSet(c1,c2,c3);
   }
+  public void testRemoveSetNoTable(){
+    Card c1 = new Card(2,1,3,1);
+    Card c2 = new Card(2,1,2,2);
+    Card c3 = new Card(3,3,3,1);
+    Table t = new Table();
+    t.removeSet(c1, c2, c3);
+    t.removeSet(c1, c2, c3);
+  }
+  public void testSmallTable(){
+    Card c1 = new Card(2,1,3,1);
+    Card c2 = new Card(2,1,2,2);
+   // Card c3 = new Card(3,3,3,1);
+    Table t = new Table();
+    
+  }
+    
   public void testNumCards(){
     Card c1 = new Card(1,2,3,1);
     Card c2 = new Card(1,2,2,1);

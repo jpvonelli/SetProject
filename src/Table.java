@@ -29,6 +29,8 @@ public class Table {
   private void removeCard(Card c){
     TableNode curr = head;
     TableNode prev = null;
+    if(head == null)
+      return;
     while(curr != null){
       if(!c.equals(curr.getCard()))
         curr.getNext();
@@ -50,7 +52,6 @@ public class Table {
     // return.
     //otherwise:
     // remove c1, c2, and c3 preserving the relative order of the rest of the cards.
-    
     if(c1.isSet(c2, c3) == false)
       return;
     if(!onTable(c1))
@@ -107,6 +108,9 @@ public class Table {
     TableNode b = a.getNext();
     TableNode c = b.getNext();
     int numSets = 0;
+    
+    if(head == null)
+      return 0;
     
     while(a != null && a.getNext() != null && a.getNext().getNext() != null){
       b = a.getNext();
