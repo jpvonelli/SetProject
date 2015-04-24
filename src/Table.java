@@ -71,6 +71,7 @@ public class Table {
     //if we havent stored the length of the list, we have to iterate through the
     //list and count the cards.
     TableNode temp = head;
+    length = 0;
     if(head == null)
       return 0;
     while(temp != null)
@@ -91,9 +92,9 @@ public class Table {
       return null;
     if(index < numCards())
     {
-      for(int i = 0; i<numCards();i++)
+      for(int i = 0; i<index;i++)
       {
-        curr.getNext();
+        curr = curr.getNext();
       }
       return curr.getCard();
     }
@@ -105,8 +106,8 @@ public class Table {
     //get all triples of cards on the table, and check isSet(). Create a counter and
     //everytime isSet() == true, update the counter by 1.
     TableNode a = head;
-    TableNode b = a.getNext();
-    TableNode c = b.getNext();
+    TableNode b = null;
+    TableNode c = null;
     int numSets = 0;
     
     if(head == null)

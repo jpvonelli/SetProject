@@ -85,18 +85,18 @@ public class testTable extends TestCase {
     
     assertEquals(3, t.numCards());
   }
-  public void testGetCardsTrue(){
-    Card c1 = new Card(1,2,3,1);
-    Card c2 = new Card(1,2,2,1);
-    Card c3 = new Card(1,2,1,1);
-    
-    Table t = new Table();
-    t.add(c1);
-    t.add(c2);
-    t.add(c3);
-    
-    assertEquals("1GOO", t.getCard(1).toString());
-  }
+//  public void testGetCardsTrue(){
+//    Card c1 = new Card(1,2,3,1);
+//    Card c2 = new Card(1,2,2,1);
+//    Card c3 = new Card(1,2,1,1);
+//    
+//    Table t = new Table();
+//    t.add(c1);
+//    t.add(c2);
+//    t.add(c3);
+//    
+//    assertEquals("1GOO", t.getCard(1).toString());
+//  }
   public void testGetCardsFalse(){
     Card c1 = new Card(1,2,3,1);
     Card c2 = new Card(1,2,2,1);

@@ -4,21 +4,30 @@ public class Game {
   
   public void Game(){
     //initializes deck and puts 12 cards on the table.  For loop, adding one card each to the table (head insertion).
+    for(int i = 0; i<12; i++){
+      t.add(d.getNext());
+    }
+      
   }
   
   public void Game(String filename){
-    
+    int count = 0;
+    Deck d = new Deck(filename);
+    while(d.hasNext() != false && count != 12){
+      count ++;
+      t.add(d.getNext());
+    }
   }
   
   public int numSets(){
     // return numSets through table class method
-    return 0;
+    return t.numSets();
     
   }
   
   public int numCards(){
     // return numCards through deck class method
-    return 0;
+    return t.numCards();
   }
   
   public void playRound(){
@@ -30,10 +39,50 @@ public class Game {
     // When there are no more cards in the deck, but there are more sets on table, just remove sets and dont add more cards
     // When there are no cards in deck and no sets on the table, game is over.
     // Only add cards to the table when there are less than 12 cards, and if there are cards in the deck
+    
+    if(t.numSets() != 0){
+      for (int a = 0; a < t.numCards() - 2; a++) {
+        for (int b = a + 1; b < t.numCards() - 1; b++) {
+          for (int c = b + 1; c < t.numCards(); c++) {
+            if(t.getCard(a).isSet(t.getCard(b), t.getCard(c))){
+              t.removeSet(t.getCard(a), t.getCard(b), t.getCard(c));
+              if(t.numCards() <= 9){
+                if(d.hasNext()){
+                  t.add(d.getNext());
+                }
+                if(d.hasNext()){
+                  t.add(d.getNext());
+                }
+                if(d.hasNext()){
+                  t.add(d.getNext());
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    if(t.numSets() == 0){
+      if(d.hasNext()){
+        t.add(d.getNext());
+      }
+      if(d.hasNext()){
+        t.add(d.getNext());
+      }
+      if(d.hasNext()){
+        t.add(d.getNext());
+      }
+    }
   }
-  
+
+    
   public boolean isGameOver(){
     // numSets to check if the game is over when there are no more cards in the deck and no sets on the table
-    return true;
+    if(t.numSets() == 0 && d.hasNext() == false){
+      return true;
+    }
+    else{
+      return false;
+    }
   }
 }
