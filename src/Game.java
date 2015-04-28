@@ -1,18 +1,21 @@
 public class Game {
-  Table t = new Table();
-  Deck d = new Deck();
+  Table t;
+  Deck d;
   
-  public void Game(){
+  public Game(){
     //initializes deck and puts 12 cards on the table.  For loop, adding one card each to the table (head insertion).
+    d = new Deck();
+    t = new Table();
     for(int i = 0; i<12; i++){
       t.add(d.getNext());
     }
       
   }
   
-  public void Game(String filename){
+  public Game(String filename){
     int count = 0;
-    Deck d = new Deck(filename);
+    d = new Deck(filename);
+    t = new Table();
     while(d.hasNext() != false && count != 12){
       count ++;
       t.add(d.getNext());
@@ -57,6 +60,7 @@ public class Game {
                   t.add(d.getNext());
                 }
               }
+              return;
             }
           }
         }
