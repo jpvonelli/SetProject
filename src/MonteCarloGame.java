@@ -1,7 +1,7 @@
 public class MonteCarloGame{
   public static void main(String[] args){
-    int setTotal = 0;
-    int numCardEndTotal = 0;
+    float setTotal = 0;
+    float numCardEndTotal = 0;
     for(int x = 0; x < 1000000; x++){
       Game g = new Game();
       setTotal += g.numSets();
@@ -10,9 +10,11 @@ public class MonteCarloGame{
       }
       numCardEndTotal += g.numCards();
     }
+    setTotal = setTotal / 1000000;
+    numCardEndTotal = numCardEndTotal / 1000000;
     System.out.println("Finished");
-    System.out.println("numSets at beginning: " + setTotal);
-    System.out.println("numCardEndTotal at end: " + numCardEndTotal);
+    System.out.println("Average numSets at beginning: " + setTotal);
+    System.out.println("Average numCardEndTotal at end: " + numCardEndTotal);
   }
 }
       
